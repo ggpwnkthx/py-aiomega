@@ -1,0 +1,16 @@
+{
+	"name": "Python 3",
+	"image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"ms-python.vscode-pylance",
+				"ms-python.python",
+				"ms-python.black-formatter",
+				"magicstack.MagicPython",
+				"ms-vscode.cpptools-extension-pack"
+			]
+		}
+	}
+}
