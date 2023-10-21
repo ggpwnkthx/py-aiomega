@@ -18,11 +18,11 @@ aiomega is a Python library that enables interaction with the Mega.nz API asynch
 
 ### Build and Install within Docker
 
-Once the project is opened in a Docker container through VSCode, utilize the provided shell script `build.sh` to build the Mega SDK with Python bindings and place them in the `aiomega` directory. Execute the script within the container:
+Once the project is opened in a Docker container through VSCode, it will automatically run `build.sh` to build the Mega SDK with Python bindings and place them in the `aiomega` directory. You can execute the script manually from the terminal:
 ```sh
 vscode ➜ /workspaces/py-aiomega (main) $ ./build.sh
 ```
-**Note:** Ensure that the Docker container has access to the internet to clone repositories and install dependencies.
+**Note:** You may need to ensure that the Docker container has access to the internet to clone repositories and install dependencies.
 
 ## Usage
 
