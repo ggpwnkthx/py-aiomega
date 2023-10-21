@@ -28,8 +28,7 @@ vscode ➜ /workspaces/py-aiomega (main) $ ./build.sh
 
 Here’s a basic usage example that logs in and prints the used and total storage:
 ```python
-from aiomega.aiomega import AsyncMegaApi
-from aiomega.mega import MegaAccountDetails
+from aiomega import AsyncMegaApi, MegaRequest, MegaAccountDetails
 import asyncio, os, logging
 
 logging.basicConfig(
@@ -39,16 +38,18 @@ logging.basicConfig(
 
 async def main():
     async with AsyncMegaApi(
-        email=os.getenv("mega_email"), password=os.getenv("mega_password")
+        email=os.getenv("mega_email"), 
+        password=os.getenv("mega_password"),
     ) as mega:
-        ad: MegaAccountDetails = (
-            await mega.getAccountDetails()
-        ).getMegaAccountDetails()
+        # Send request to execution thread and wait for the response
+        response: MegaRequest = await mega.getAccountDetails() 
+        # Get account details from the response object
+        account_details: MegaAccountDetails = response.getMegaAccountDetails()
+        # Log storage usage
         logging.info(
-            "Storage: {} of {} ({} %)".format(
-                ad.getStorageUsed(),
-                ad.getStorageMax(),
-                100 * ad.getStorageUsed() / ad.getStorageMax(),
+            "Storage Used: {} of {}".format(
+                account_details.getStorageUsed(),
+                account_details.getStorageMax()
             )
         )
 

@@ -1,7 +1,12 @@
+.env
+__pycache__
 aiomega/__init__.py
 aiomega/_mega.so
 aiomega/libmega.so
 aiomega/mega.py
 aiomega/megacli.py
 aiomega/test_libmega.py
+build
+dist
 sdk
+*.egg*

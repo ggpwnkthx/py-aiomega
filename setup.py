@@ -1,0 +1,47 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="aiomega",
+    version="0.1.0",
+    description="An asynchronous Python wrapper for the Mega SDK, providing C++ Python bindings for interacting with the Mega.nz API.",
+    long_description=open("README.MD").read(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/ggpwnkthx/aiomega",
+    author="Isaac Jessup",
+    author_email="ibjessup@gmail.com",
+    keywords=[
+        "MEGA",
+        "MEGANZ",
+        "mega.nz",
+        "mega.io",
+        "privacy",
+        "cloud",
+        "storage",
+        "API",
+        "async",
+        "asynchronous",
+    ],
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "Operating System :: Linux",
+        "Operating System :: OSX",
+        "Programming Language :: Python :: Implementation :: CPython",
+        "Topic :: Software Development :: Build Tools",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.10",
+    ],
+    packages=find_packages(),
+    package_data = {
+        'aiomega': ['libmega.so', '_mega.so'],
+    },
+    exclude_package_data = {'': ['example.py']},
+    include_package_data=True,
+    python_requires=">=3.10, <4",
+    install_requires=[],
+    project_urls={
+        "Bug Reports": "https://github.com/ggpwnkthx/aiomega/issues",
+        "Source": "https://github.com/ggpwnkthx/aiomega/",
+    },
+)
