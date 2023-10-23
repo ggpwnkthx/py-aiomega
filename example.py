@@ -1,9 +1,11 @@
-from aiomega.aiomega import AsyncMegaApi
-from aiomega.mega import MegaAccountDetails
+from aiomega import AsyncMegaApi, MegaAccountDetails
+from dotenv import load_dotenv
 import asyncio, os, logging
 
+load_dotenv()
+
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format="%(levelname)s\t%(asctime)s (%(threadName)-10s) %(message)s",
 )
 
